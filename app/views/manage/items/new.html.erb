@@ -6,8 +6,20 @@
 
       <%= f.input :name, label: false, placeholder: "Enter the item name", input_html: { class: "form-control form-control-solid" } %>
       <%= f.input :description, placeholder: "Enter the items description", label: false, input_html: { class: "form-control form-control-solid" } %>
-      <%= f.input :bin, placeholder: "Enter the buy now price", label: false, input_html: { class: "form-control form-control-solid" } %>
-      <%= f.input :co, placeholder: "Enter the current offer", label: false, input_html: { class: "form-control form-control-solid" } %>
+      <div class="row">
+        <div class="col">
+          <%= f.input :copper, as: :integer %>
+        </div>
+        <div class="col">
+          <%= f.input :silver, as: :integer %>
+        </div>
+        <div class="col">
+          <%= f.input :gold, as: :integer %>
+        </div>
+        <div class="col">
+          <%= f.input :gem, as: :integer %>
+        </div>
+      </div>
     </div>
     <div class="card-footer">
       <%= f.button :submit, class: "btn btn-primary" %>
