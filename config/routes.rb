@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :manage do
     root to: 'dashboard#index'
+    resources :items, only: [:new, :create]
   end
 
 end

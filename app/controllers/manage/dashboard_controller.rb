@@ -1,4 +1,4 @@
-class Manage::DashboardController < AuthenticationController
+class Manage::DashboardController < Manage::ApplicationController
   def index
 
   end
