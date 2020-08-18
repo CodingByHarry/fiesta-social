@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
     </ul>
     <form class="form-inline mt-2 mt-md-0">
@@ -14,7 +14,11 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       -->
-      <a class="nav-link" href="#">Sign In</a>
+      <% if current_user %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"%>
+      <% else%>
+        <%= link_to "Sign In", new_user_session_path, class: "nav-link"%>
+      <% end %>
     </form>
   </div>
 </nav>
