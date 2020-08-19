@@ -1,18 +1,17 @@
 class Manage::ItemsController < Manage::ApplicationController
   def new
-    #@item = Item.new
-    @item = ItemForm.new
+    @item = Item.new
   end
 
   def create
-    # @item = current_user.items.new(item_params)
+    @item = current_user.items.new(item_params)
 
-    # if @item.save
-    #   redirect_to manage_root_path, success: t('.success')
-    # else
-    #   render :new
-    # end
-    
+    if @item.save
+      redirect_to manage_root_path, success: t('.success')
+    else
+      render :new
+    end
+
   end
 
   private
@@ -21,6 +20,10 @@ class Manage::ItemsController < Manage::ApplicationController
     params.require(:item).permit(
       :name,
       :description,
+      :copper,
+      :silver,
+      :gold,
+      :gem,
     )
   end
 end

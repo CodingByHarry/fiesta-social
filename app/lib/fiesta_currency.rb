@@ -25,7 +25,7 @@ class FiestaCurrency
     gems_with_change.first
   end
 
-  def gold
+  def gold 
     gold_with_change.first
   end
 
@@ -49,5 +49,9 @@ class FiestaCurrency
 
   def silver_with_change
     gold_with_change.last.divmod(1_000)
+  end
+
+  def to_copper(copper, silver, gold, gems)
+    1_000
   end
 end
