@@ -3,17 +3,19 @@ class FiestaCurrencyConverter
   attr_reader :copper, :silver, :gold, :gem
 
   def initialize(copper: 0, silver: 0, gold: 0, gem: 0)
-    @copper = copper
-    @silver = silver
-    @gold = gold
-    @gem = gem
+    @copper = copper.to_i
+    @silver = silver.to_i
+    @gold = gold.to_i
+    @gem = gem.to_i
   end
 
   def to_copper
+    binding.remote_pry
     total = @copper
     total = total + @silver * 1_000
     total = total + @gold * 1_000_000
     total = total + @gem * 100_000_000
+    binding.remote_pry
   end
 
   def from_copper

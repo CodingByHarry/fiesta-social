@@ -24,7 +24,7 @@ class Item < ApplicationRecord
     if item.bin == nil || item.bin.blank?
       0
     else 
-      currency = FiestaCurrency.new(item.bin)
+      currency = FiestaCurrencyConverter.new(copper: item.bin)
       @copper = currency.copper
       @silver = currency.silver
       @gold = currency.gold
@@ -34,6 +34,6 @@ class Item < ApplicationRecord
   
   def calculate_bin
     #self.bin = copper * 10
-    bin = FiestaCurrency.new.to_copper(:copper, :silver, :gold, :gem)
+    bin = FiestaCurrencyConverter.new(copper: copper, silver: silver, gold: gold, gem: gem).to_copper
   end
 end
