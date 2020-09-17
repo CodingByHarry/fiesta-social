@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  belongs_to :fiesta_item
 
   validates :name, presence: true
   validates :description, presence: true
@@ -10,27 +11,27 @@ class Item < ApplicationRecord
 
   # Convert bin price back to a user friendly currency for when users are trying to update, etc
   # Callbacks set so this will always run
-  after_initialize do |item|
-    bin_to_currency(item)
-  end
+  # after_initialize do |item|
+  #   bin_to_currency(item)
+  # end
  
-  after_find do |item|
-    bin_to_currency(item)
-  end
+  # after_find do |item|
+  #   bin_to_currency(item)
+  # end
 
   private
 
-  def bin_to_currency(item)
-    if item.bin == nil || item.bin.blank?
-      0
-    else 
-      currency = FiestaCurrencyConverter.new(copper: item.bin)
-      @copper = currency.copper
-      @silver = currency.silver
-      @gold = currency.gold
-      @gem = currency.gem
-    end
-  end
+  # def bin_to_currency(item)
+  #   if item.bin == nil || item.bin.blank?
+  #     0
+  #   else 
+  #     currency = FiestaCurrencyConverter.new(copper: item.bin)
+  #     @copper = currency.copper
+  #     @silver = currency.silver
+  #     @gold = currency.gold
+  #     @gem = currency.gem
+  #   end
+  # end
   
   def calculate_bin
     #self.bin = copper * 10

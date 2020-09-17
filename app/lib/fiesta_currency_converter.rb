@@ -10,12 +10,10 @@ class FiestaCurrencyConverter
   end
 
   def to_copper
-    binding.remote_pry
     total = @copper
     total = total + @silver * 1_000
     total = total + @gold * 1_000_000
     total = total + @gem * 100_000_000
-    binding.remote_pry
   end
 
   def from_copper
