@@ -4,21 +4,78 @@
     <div class="card-body">
       <%= render "shared/errors", object: @item %>
 
-      <%= f.input :name, label: false, placeholder: "Enter the item name", input_html: { class: "form-control form-control-solid" } %>
-      <%= f.input :description, placeholder: "Enter the items description", label: false, input_html: { class: "form-control form-control-solid" } %>
-      <div class="row">
-        <div class="col">
-          <%= f.input :copper, as: :integer %>
+      <%= f.association :fiesta_item, label: false, hint: "Select the item you are selling" %>
+      <%= f.input :note, hint: "The description of the item", label: false, disabled: true, input_html: { class: "form-control form-control-solid" } %>
+
+      <hr/>
+
+      <div class="container" style="border:1px solid #cecece;">
+      Stats
+        <div class="row">
+          <div class="col-sm">
+            END: <input type="text" id="end" name="end" disabled="true" class="form-control form-control-solid">
+            <div class="w-100"></div>
+            DEX: <input type="text" id="dex" name="dex" disabled="true" class="form-control form-control-solid">
+            <div class="w-100"></div>
+            STR: <input type="text" id="str" name="str" disabled="true" class="form-control form-control-solid">
+            <div class="w-100"></div>
+            SPR: <input type="text" id="spr" name="spr" disabled="true" class="form-control form-control-solid">
+            <div class="w-100"></div>
+            INT: <input type="text" id="int" name="int" disabled="true" class="form-control form-control-solid">
+          </div>
+          <div class="col-sm">
+            END: <%= f.input :end, label: false, input_html: { class: "form-control form-control-solid" } %>
+            <div class="w-100"></div>
+            DEX: <%= f.input :dex, label: false, input_html: { class: "form-control form-control-solid" } %>
+            <div class="w-100"></div>
+            STR: <%= f.input :str, label: false, input_html: { class: "form-control form-control-solid" } %>
+            <div class="w-100"></div>
+            SPR: <%= f.input :spr, label: false, input_html: { class: "form-control form-control-solid" } %>
+            <div class="w-100"></div>
+            INT: <%= f.input :int, label: false, input_html: { class: "form-control form-control-solid" } %>
+          </div>
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+          </div>
         </div>
-        <div class="col">
-          <%= f.input :silver, as: :integer %>
+      </div>
+
+      <hr/>
+
+      <div class="container" style="border:1px solid #cecece;">
+        <div class="row">
+          <div class="col">
+            Licenses
+          </div>
+          <div class="col">
+            Sockets
+          </div>
+          <div class="col">
+            HOBS
+          </div>
         </div>
-        <div class="col">
-          <%= f.input :gold, as: :integer %>
+      </div>
+
+      <hr/>
+
+      <div class="container" style="border:1px solid #cecece;">
+      BIN Price
+        <div class="row">
+          <div class="col">
+            <%= f.input :copper, as: :integer %>
+          </div>
+          <div class="col">
+            <%= f.input :silver, as: :integer %>
+          </div>
+          <div class="col">
+            <%= f.input :gold, as: :integer %>
+          </div>
+          <div class="col">
+            <%= f.input :gem, as: :integer %>
+          </div>
         </div>
-        <div class="col">
-          <%= f.input :gem, as: :integer %>
-        </div>
+
       </div>
     </div>
     <div class="card-footer">

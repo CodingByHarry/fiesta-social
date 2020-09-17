@@ -31,11 +31,15 @@ ActiveRecord::Schema.define(version: 2020_09_17_034806) do
   create_table "items", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name", default: "", null: false
-    t.string "description", default: "", null: false
+    t.string "note", default: "", null: false
     t.integer "bin"
     t.bigint "user_id", null: false
     t.bigint "fiesta_item_id", null: false
+    t.integer "end", default: 0, null: false
+    t.integer "spr", default: 0, null: false
+    t.integer "int", default: 0, null: false
+    t.integer "str", default: 0, null: false
+    t.integer "dex", default: 0, null: false
     t.index ["fiesta_item_id"], name: "index_items_on_fiesta_item_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

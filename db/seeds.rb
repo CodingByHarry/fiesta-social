@@ -30,5 +30,5 @@ fiesta_item2 = FiestaItem.create(
   dex: 40, 
 )
 
-item1 = Item.create(name: 'Sword', description: 'Attacks things', bin: 50000, user_id: user.id, fiesta_item_id: fiesta_item1.id)
-item2 = Item.create(name: 'Wand', description: 'Attacks things with magic', bin: 0, user_id: user.id, fiesta_item_id: fiesta_item2.id)
+item1 = Item.create(note: 'hardly used', bin: 50000, user_id: user.id, fiesta_item_id: fiesta_item1.id)
+item2 = Item.create(note: 'buy it', bin: 0, user_id: user.id, fiesta_item_id: fiesta_item2.id)

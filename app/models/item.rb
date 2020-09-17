@@ -2,8 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :fiesta_item
 
-  validates :name, presence: true
-  validates :description, presence: true
+  validates :note, presence: true
 
   attr_accessor :copper, :silver, :gold, :gem
 
