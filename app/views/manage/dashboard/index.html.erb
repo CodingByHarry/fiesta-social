@@ -18,7 +18,7 @@
     <h5 class="card-title">Your current items on sale</h5>
     <p class="card-text">
       <% @items.each do |item| %>
-        <li><%= item.name %></li>
+        <li><%= item.fiesta_item.name %></li>
       <% end %>
     </p>
     <%= link_to "Create Item", new_manage_item_path, class: "btn btn-primary" %>

@@ -7,6 +7,7 @@ class Manage::ItemsController < Manage::ApplicationController
     @item = current_user.items.new(item_params)
 
     if @item.save
+      dd
       redirect_to manage_root_path, success: t('.success')
     else
       render :new
@@ -18,12 +19,18 @@ class Manage::ItemsController < Manage::ApplicationController
 
   def item_params
     params.require(:item).permit(
-      :name,
-      :description,
+      :fiesta_item_id,
+      :note,
+      :end,
+      :str,
+      :dex,
+      :spr,
+      :int,
       :copper,
       :silver,
       :gold,
       :gem,
+      :hobs,
     )
   end
 end

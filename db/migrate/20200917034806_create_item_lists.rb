@@ -4,7 +4,7 @@ class CreateItemLists < ActiveRecord::Migration[6.0]
       t.timestamps
 
       t.string :name, null: false
-      t.string :icon, null: false
+      t.text :icon, null: false
       t.string :description, null: false, default: "This item doesn't have a description."
       t.integer :end, null: false, default: 0
       t.integer :spr, null: false, default: 0

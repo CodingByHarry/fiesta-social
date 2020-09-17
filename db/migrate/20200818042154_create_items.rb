@@ -13,6 +13,8 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :int, null: false, default: 0
       t.integer :str, null: false, default: 0
       t.integer :dex, null: false, default: 0
+
+      t.integer :hobs, null: false, default: 0
     end
   end
 end

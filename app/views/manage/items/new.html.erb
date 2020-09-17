@@ -4,8 +4,19 @@
     <div class="card-body">
       <%= render "shared/errors", object: @item %>
 
-      <%= f.association :fiesta_item, label: false, hint: "Select the item you are selling" %>
-      <%= f.input :note, hint: "The description of the item", label: false, disabled: true, input_html: { class: "form-control form-control-solid" } %>
+      <div class="container" style="border:1px solid #cecece;">
+        <%= f.association :fiesta_item, label: false, value_method: :id, hint: "Select the item you are selling" %>
+        <div class="row">
+          <div class="col-sm">
+            <%= f.input :note, label: false, hint: 'Enter a note for your potential buyers', as: :text, input_html: { class: "form-control form-control-solid" } %>
+          </div>
+          <div class="col-sm">
+            <textarea class="form-control form-control-solid">
+Info about an item from the fiesta_items model. "this is a mystical thingy llalalala"
+            </textarea>
+          </div>
+        </div>
+      </div>     
 
       <hr/>
 
@@ -13,26 +24,26 @@
       Stats
         <div class="row">
           <div class="col-sm">
-            END: <input type="text" id="end" name="end" disabled="true" class="form-control form-control-solid">
+            END: <input type="text" id="end" name="end" value="1" disabled="true" class="form-control form-control-solid">
             <div class="w-100"></div>
-            DEX: <input type="text" id="dex" name="dex" disabled="true" class="form-control form-control-solid">
+            DEX: <input type="text" id="dex" name="dex" value="1" disabled="true" class="form-control form-control-solid">
             <div class="w-100"></div>
-            STR: <input type="text" id="str" name="str" disabled="true" class="form-control form-control-solid">
+            STR: <input type="text" id="str" name="str" value="1" disabled="true" class="form-control form-control-solid">
             <div class="w-100"></div>
-            SPR: <input type="text" id="spr" name="spr" disabled="true" class="form-control form-control-solid">
+            SPR: <input type="text" id="spr" name="spr" value="1" disabled="true" class="form-control form-control-solid">
             <div class="w-100"></div>
-            INT: <input type="text" id="int" name="int" disabled="true" class="form-control form-control-solid">
+            INT: <input type="text" id="int" name="int" value="1" disabled="true" class="form-control form-control-solid">
           </div>
           <div class="col-sm">
-            END: <%= f.input :end, label: false, input_html: { class: "form-control form-control-solid" } %>
+            END: <%= f.input :end, label: false, as: :integer, input_html: { class: "form-control form-control-solid" } %>
             <div class="w-100"></div>
-            DEX: <%= f.input :dex, label: false, input_html: { class: "form-control form-control-solid" } %>
+            DEX: <%= f.input :dex, label: false, as: :integer, input_html: { class: "form-control form-control-solid" } %>
             <div class="w-100"></div>
-            STR: <%= f.input :str, label: false, input_html: { class: "form-control form-control-solid" } %>
+            STR: <%= f.input :str, label: false, as: :integer, input_html: { class: "form-control form-control-solid" } %>
             <div class="w-100"></div>
-            SPR: <%= f.input :spr, label: false, input_html: { class: "form-control form-control-solid" } %>
+            SPR: <%= f.input :spr, label: false, as: :integer, input_html: { class: "form-control form-control-solid" } %>
             <div class="w-100"></div>
-            INT: <%= f.input :int, label: false, input_html: { class: "form-control form-control-solid" } %>
+            INT: <%= f.input :int, label: false, as: :integer, input_html: { class: "form-control form-control-solid" } %>
           </div>
           <div class="col-sm">
           </div>
@@ -46,13 +57,13 @@
       <div class="container" style="border:1px solid #cecece;">
         <div class="row">
           <div class="col">
-            Licenses
+            Licenses<br>+Add New
           </div>
           <div class="col">
-            Sockets
+            Sockets<br>+Add New
           </div>
           <div class="col">
-            HOBS
+            HOBS <%= f.input :hobs, as: :integer %>
           </div>
         </div>
       </div>
