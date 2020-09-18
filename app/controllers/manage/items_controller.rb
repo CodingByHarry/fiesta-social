@@ -7,7 +7,6 @@ class Manage::ItemsController < Manage::ApplicationController
     @item = current_user.items.new(item_params)
 
     if @item.save
-      dd
       redirect_to manage_root_path, success: t('.success')
     else
       render :new
