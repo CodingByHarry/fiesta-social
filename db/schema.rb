@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_17_050734) do
+ActiveRecord::Schema.define(version: 2020_09_23_073241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 2020_09_17_050734) do
     t.integer "level", default: 0, null: false
     t.integer "status", default: 0, null: false
     t.index ["user_id"], name: "index_characters_on_user_id"
-    
+  end
+
   create_table "fiesta_items", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
