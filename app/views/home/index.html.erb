@@ -3,3 +3,27 @@
   <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
   <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs »</a>
 </div>
+
+<div class="row">
+<% @items.each do |item| %>
+<div class="col">
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><%= item.fiesta_item.name %></h5>
+      <p class="card-text"><%= item.note %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Stats</li>
+      <li class="list-group-item">Stats 2</li>
+      <li class="list-group-item">Stats 3</li>
+      <li class="list-group-item">BIN: <%= handle_no_bin(item.bin) %></li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Submit Offer</a>
+      <a href="#" class="card-link">View Offers</a>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
