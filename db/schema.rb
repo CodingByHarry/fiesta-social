@@ -15,6 +15,17 @@ ActiveRecord::Schema.define(version: 2020_09_17_050734) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "characters", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.string "name", default: "", null: false
+    t.string "class", default: "", null: false
+    t.string "guild"
+    t.integer "level", default: 0, null: false
+    t.integer "status", default: 0, null: false
+    t.index ["user_id"], name: "index_characters_on_user_id"
+    
   create_table "fiesta_items", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -72,6 +83,8 @@ ActiveRecord::Schema.define(version: 2020_09_17_050734) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "discord"
+    t.integer "discord_status", default: 0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
