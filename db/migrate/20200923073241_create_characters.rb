@@ -3,6 +3,7 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
     create_table :characters do |t|
       t.timestamps
 
+      t.references :user
       t.string :name, null: false, default: ""
       t.string :class, null: false, default: ""
       t.string :guild
